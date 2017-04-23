@@ -4,25 +4,56 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public float playerSpeed;
+	private float playerSpeed;
 	Rigidbody2D playerRigidBody;
+	private bool dead;
+	public ScoreManager scoreManager;
+	public float timer;
+	private AudioSource dying;
+	public float speedY, speedMultiplier, speedIncreaseMilestone;
+	private float _speedMilestoneCount;
+	public ObstacleGenerator obsGen1, obsGen2, obsGen3;
 
 	// Use this for initialization
 	void Start () {
 		//playerSpeed = 0f;
 		playerRigidBody = GetComponent<Rigidbody2D> ();
+		dead = false;
+		dying = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		MoveForward (playerSpeed);
-		AccelerometerMove ();
+		if (!dead) {
+			MoveForward (playerSpeed);
+			AccelerometerMove ();
+		} else {
+			MoveDown (playerSpeed);
+
+			timer -= Time.deltaTime;
+			if (timer <= 0) {
+				playerRigidBody.velocity = Vector2.zero;
+			}
+		}
 	}
 
-	void FixedUpdate()
+	void OnCollisionEnter2D(Collision2D other)
 	{
-		
+		// when the player collides with an object tagged as "Objects", it dies
+		if (other.gameObject.tag == "Collectable")
+		{
+			scoreManager.IncreaseScore();
+		}
+		if (other.gameObject.tag == "Obstacle")
+		{
+			dead = true;
+			dying.Play ();
+			scoreManager.ToggleRestartUIDisplay ();
+			scoreManager.ToggleScoreText ();
+		}
 	}
+
+
 
 	void AccelerometerMove()
 	{
@@ -49,8 +80,32 @@ public class Player : MonoBehaviour {
 	void MoveForward(float playerSpeed)
 	{
 		playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerSpeed);
-		this.playerSpeed = playerSpeed; 
+	
+		if (transform.position.y > _speedMilestoneCount)
+		{
+			_speedMilestoneCount += speedIncreaseMilestone;
+			speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
+			speedY = speedY * speedMultiplier;
+
+			obsGen1.distanceBetweenMinY = obsGen1.distanceBetweenMinY * speedMultiplier;
+			obsGen1.distanceBetweenMaxY = obsGen1.distanceBetweenMaxY * speedMultiplier;
+
+			obsGen2.distanceBetweenMinY = obsGen2.distanceBetweenMinY * speedMultiplier;
+			obsGen2.distanceBetweenMaxY = obsGen2.distanceBetweenMaxY * speedMultiplier;
+
+			obsGen3.distanceBetweenMinY = obsGen3.distanceBetweenMinY * speedMultiplier;
+			obsGen3.distanceBetweenMaxY = obsGen3.distanceBetweenMaxY * speedMultiplier;
+		}
+
+		this.playerSpeed = speedY; 
 	}
+
+	void MoveDown(float playerSpeed)
+	{
+		playerRigidBody.velocity = new Vector2(0, -1);
+		this.playerSpeed = 1; 
+	}
+
 
 	void MoveRight()
 	{
@@ -65,5 +120,9 @@ public class Player : MonoBehaviour {
 	void SetVelocityZero()
 	{
 		playerRigidBody.velocity = Vector2.zero;
+	}
+
+	public bool isDead(){
+		return dead;
 	}
 }

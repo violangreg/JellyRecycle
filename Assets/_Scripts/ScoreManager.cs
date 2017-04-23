@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour {
         _highScore = PlayerPrefs.GetFloat("HighScore");
         _show = true;
 		_displayRestartUI = false;
-        score.gameObject.SetActive(false);
+        score.gameObject.SetActive(true);
         restartUI.gameObject.SetActive(false);
 
     }

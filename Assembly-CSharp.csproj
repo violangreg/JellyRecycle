@@ -47,9 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\BGLooper.cs" />
+     <Compile Include="Assets\_Scripts\Bottle.cs" />
      <Compile Include="Assets\_Scripts\CameraRunner.cs" />
      <Compile Include="Assets\_Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\_Scripts\CollectableDestroyer.cs" />
+     <Compile Include="Assets\_Scripts\Items_Pool.cs" />
      <Compile Include="Assets\_Scripts\ObjectPooler.cs" />
+     <Compile Include="Assets\_Scripts\ObjectSpawner.cs" />
      <Compile Include="Assets\_Scripts\ObstacleDestroyer.cs" />
      <Compile Include="Assets\_Scripts\ObstacleGenerator.cs" />
      <Compile Include="Assets\_Scripts\ObstacleSpawner.cs" />
@@ -58,6 +62,8 @@
      <Compile Include="Assets\_Scripts\PlayerManager.cs" />
      <Compile Include="Assets\_Scripts\ScoreManager.cs" />
      <Compile Include="Assets\_Scripts\Sound.cs" />
+     <Compile Include="Assets\_Scripts\StartGame.cs" />
+     <None Include="Assets\Font\LICENSE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

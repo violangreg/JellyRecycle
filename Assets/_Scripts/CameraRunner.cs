@@ -6,6 +6,7 @@ public class CameraRunner : MonoBehaviour {
 
 	private Transform player; 		// is the transform of the player
 	private float offSetY;			// is the offset x axis of the player
+	public Player playa;
 
 	void Start () 
 	{
@@ -24,7 +25,7 @@ public class CameraRunner : MonoBehaviour {
 
 	void Update () 
 	{
-		if (player != null) 													
+		if (player != null && !playa.isDead()) 													
 		{
 			Vector3 pos = transform.position;				// get the position of the camera
 			pos.y = player.position.y + offSetY;			// set the position of the camera to the player and its offset
