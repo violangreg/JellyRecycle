@@ -41,7 +41,7 @@ public class ObjectPooler : MonoBehaviour
 		obj.SetActive (false);
 		_pooledObjects.Add (obj);
 
-		Debug.Log ("test");
+		//Debug.Log ("test");
 		return obj;
 
 	}
