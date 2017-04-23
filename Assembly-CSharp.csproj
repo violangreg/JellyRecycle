@@ -48,8 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\_Scripts\BGLooper.cs" />
      <Compile Include="Assets\_Scripts\CameraRunner.cs" />
+     <Compile Include="Assets\_Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\_Scripts\ObjectPooler.cs" />
+     <Compile Include="Assets\_Scripts\ObstacleDestroyer.cs" />
+     <Compile Include="Assets\_Scripts\ObstacleGenerator.cs" />
+     <Compile Include="Assets\_Scripts\PauseManager.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\_Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\_Scripts\Sound.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
