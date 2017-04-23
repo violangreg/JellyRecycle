@@ -19,6 +19,11 @@ public class Player : MonoBehaviour {
 		AccelerometerMove ();
 	}
 
+	void FixedUpdate()
+	{
+		
+	}
+
 	void AccelerometerMove()
 	{
 		float x = Input.acceleration.x;
@@ -33,6 +38,12 @@ public class Player : MonoBehaviour {
 		}
 
 		MoveForward (playerSpeed);
+	}
+
+	void AccelerometerForce()
+	{
+		Vector2 force = new Vector2 (-Input.acceleration.x, 0) * playerSpeed;
+		playerRigidBody.AddForce(force);
 	}
 
 	void MoveForward(float playerSpeed)
