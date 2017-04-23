@@ -27,7 +27,7 @@ public class BGLooper : MonoBehaviour {
 	// When loopingPoint collides with another object in game, the collided object (collider) is looped forward.
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		Debug.Log ("Triggered: " + collider.name); //used for testing/debugging purposes
+		//Debug.Log ("Triggered: " + collider.name); //used for testing/debugging purposes
         if (collider.IsTouchingLayers(layer))
         {
             float heightOfBGObject = collider.bounds.size.y;		// get the width of the collided object

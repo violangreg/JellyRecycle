@@ -1,15 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ScoreManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\BGLooper.cs">
     <Files>
-      <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ObstacleGenerator.cs" Line="29" Column="4" />
+      <File FileName="Assets\_Scripts\ObstacleDestroyer.cs" Line="19" Column="33" />
+      <File FileName="Assets\_Scripts\ObjectPooler.cs" Line="8" Column="63" />
+      <File FileName="Assets\_Scripts\ScoreManager.cs" Line="9" Column="27" />
+      <File FileName="Assets\_Scripts\BGLooper.cs" Line="30" Column="10" />
+      <File FileName="Assets\_Scripts\CameraRunner.cs" Line="16" Column="9" />
+      <File FileName="Assets\_Scripts\ChangeScene.cs" Line="13" Column="26" />
+      <File FileName="Assets\_Scripts\PauseManager.cs" Line="48" Column="60" />
+      <File FileName="Assets\_Scripts\Player.cs" Line="30" Column="10" />
       <File FileName="Assets\_Scripts\PlayerManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\CameraRunner.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\BGLooper.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ObstacleGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ObstacleDestroyer.cs" Line="16" Column="3" />
-      <File FileName="Assets\_Scripts\ObjectPooler.cs" Line="44" Column="5" />
-      <File FileName="Assets\_Scripts\ScoreManager.cs" Line="11" Column="73" />
+      <File FileName="Assets\_Scripts\Sound.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ObstacleSpawner.cs" Line="11" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

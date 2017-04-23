@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 	void AccelerometerMove()
 	{
 		float x = Input.acceleration.x;
-		Debug.Log ("x = " + x);
+		//Debug.Log ("x = " + x);
 
 		if (x < -0.1f) {
 			MoveLeft ();
