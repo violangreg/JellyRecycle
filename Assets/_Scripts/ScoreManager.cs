@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
+    private float scoreMultiplier = 0.05f;
     private float _scoreCount, _highScore;
     private bool _show, _displayRestartUI;
     public AudioSource _scoreAudio;
-    public Text score, endScore, highScore, endScoreText, highScoreText;
+	public Text score, endScore, highScore, endScoreText, highScoreText, moneyMade;
     GameObject restartUI;
 
     // Use this for initialization
@@ -28,7 +29,7 @@ public class ScoreManager : MonoBehaviour {
         score.text = _scoreCount.ToString();
         endScore.text = _scoreCount.ToString();
         highScore.text = _highScore.ToString();
-
+        moneyMade.text = string.Format("TOTAL:   {0:C}", (_scoreCount * scoreMultiplier));
         if (_scoreCount > _highScore)
         {
             _highScore = _scoreCount;
@@ -83,9 +84,16 @@ public class ScoreManager : MonoBehaviour {
 	{
 		return _scoreCount;
 	}
+
 	public void displayRestartUI()
 	{
 		restartUI.gameObject.SetActive (true);
 		_displayRestartUI = true;
 	}
+
+    string formatCents(float n)
+    {
+
+        return null;
+    }
 }

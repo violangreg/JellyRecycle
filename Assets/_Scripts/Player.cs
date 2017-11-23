@@ -46,10 +46,13 @@ public class Player : MonoBehaviour {
 		}
 		if (other.gameObject.tag == "Obstacle")
 		{
-			dead = true;
-			dying.Play ();
-			scoreManager.ToggleRestartUIDisplay ();
-			scoreManager.ToggleScoreText ();
+
+			if (!dead) {
+				dead = true;
+				dying.Play ();
+				scoreManager.ToggleRestartUIDisplay ();
+				scoreManager.ToggleScoreText ();
+			}
 		}
 	}
 
