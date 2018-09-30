@@ -16,3 +16,4 @@ Project descriptionJelly Recycle – BeachHackathon 2017
 •	Developed Jelly Recycle, a mobile game, to raise awareness about pollution in the ocean. 
 •	Managed and led a team of 4 developers to complete application in 24 hours. 
 •	In 24 hours, the application’s functionality is usable, with ~80% completion. 
+
